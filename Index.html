@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Multiplos </title>
+    <style>
+        body {
+            background-color: #20D467;
+        }
+
+        input {
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            border: none;
+            width: 200px;
+            height: 20px;
+            text-align: center;
+            border-bottom: 2px solid white;
+            transition: 0.25s;
+        }
+
+        input:focus {
+            outline: none;
+            width: 210px;
+            text-shadow: 2px 2px 5px #20d468;
+        }
+
+        input:hover {
+            text-shadow: 2px 2px 5px #20d468;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.72);
+            text-align: center;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        div {
+            background-image: url("https://i.pinimg.com/originals/c6/b9/e1/c6b9e1ee25e5ac9daed19a7cf147111f.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 390px 500px;
+
+        }
+
+        textarea {
+            background: rgba(255, 255, 255, 0.138);
+            border-radius: 20px;
+            border: none;
+            color: white;
+            text-shadow: 2px 2px 5px #20d468;
+            text-align: center;
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+
+        button {
+            background-color: #20d468b6;
+            border-radius: 20px;
+            border: none;
+            width: 80px;
+            height: 20px;
+            color: white;
+            font-size: 13px;
+        }
+
+        button:focus{
+            outline: none;
+        }
+
+        button:hover {
+            text-shadow: 2px 2px 5px #EBEB2F;
+            box-shadow: 2px 2px 5px #EBEB2F;
+        }
+    </style>
+</head>
+<!-- Leia 2 valores inteiros (A e B). Após, o programa deve mostrar uma mensagem "Sao
+Multiplos" ou "Nao sao Multiplos", indicando se os valores lidos são múltiplos
+entre si. -->
+
+<body>
+    <center>
+        <br><br><br><br><br>
+        <div>
+            <br><br><br>
+            <input type="number" id="A" placeholder="Insira um valor">
+            <br><br>
+            <input type="number" id="B" placeholder="Insira um valor">
+            <br><br>
+            <button type="button" onclick="indicarMultiplos()"> Ler valores </button>
+            <br><br>
+            <textarea id="resultado" cols="50" rows="15" readonly></textarea>
+            <br><br><br>
+        </div>
+    </center>
+
+    <script type="text/javascript">
+
+        resposta = "O site diz:\n\n"
+
+        const indicarMultiplos = function () {
+
+            let x = document.getElementById("A").value
+            let y = document.getElementById("B").value
+
+            if (x % y == 0 || y % x == 0) {
+                resp = 'Os valores ' + x + ' e ' + y + ' são múltiplos\n'
+            } else if (x % y != 0 || y % x != 0) {
+                resp = 'Os valores ' + x + ' e ' + y + ' não são múltiplos\n'
+            }
+
+            resposta += resp
+            document.getElementById('resultado').value = resposta
+        }
+
+
+    </script>
+</body>
+
+</html>
